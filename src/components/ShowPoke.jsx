@@ -1,44 +1,13 @@
 import { useState } from 'react'
 
-async function fetchUrls(setX) {
-	const listOfUrls = []
-	const all1126 = 'https://pokeapi.co/api/v2/pokemon?limit=1200&offset=0'
-	const response = await fetch(all1126, {method: 'GET'})
-	const data = await response.json()
-	setX(data.results)
-} 
-
-function handleIncomingValue(props) {
-	if (props == 'ditto') {}
-}
-
-
-function ShowPoke(props) {
-	const [x, setX] = useState([])
+function ShowPoke() {
 	const [name, setName] = useState('')
 	const [abilities, setAbilities] = useState([])
 	const [image, setImage] = useState(null)
-	const [nickname, setNickname] = useState('') // ?
-
-	fetchUrls(setX)
-	
-	const matchingPokemon = x.find(q => q.name == props.chosenPokemon)
-
-	// let idParamList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
-	// let idParam = 0
-	// idParamList.forEach(element => {
-	// 	idParam = idParamList[element - 1] // funkar
-	// });
-	
-	let start = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
-	const end = '.png'
-	// let imgUrl = start + idParam + end
-
-	let tryWithParam = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{idParam}.png' // funkar inte, {idParam} skrivs ut.
+	const [nickname, setNickname] = useState('')
 
 	let baseUrl = 'https://pokeapi.co/api/v2/pokemon/'
 	let baseImg = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
-
 
 	const dittoUrl = baseUrl + '132'
 	let dittoImgUrl = baseImg + '132' + '.png'
@@ -64,22 +33,17 @@ function ShowPoke(props) {
 	const caterpieImgurl = baseImg + '10' + '.png'
 	const caterpieUrl = baseUrl + '10'
 
-const fetchPokemoonData = async (url) => {
-
-	const response = await fetch(url, {method: 'GET'})
-	const pokemonDetails = await response.json()
-	setName(pokemonDetails.name)
-	setAbilities([pokemonDetails.abilities[0].ability.name, pokemonDetails.abilities[1].ability.name])
-	setImage(imgUrl)
-
-
-}
-	
 	return (		
 		<div>
-			<button onClick={  () => fetchPokemoonData(matchingPokemon.url)
+			<button onClick={async function fetchDittodata() {
+				const response = await fetch(dittoUrl, {method: 'GET'})
+				const data = await response.json()
 
-			}> VISA </button>
+				setName(data.name)
+				setAbilities([data.abilities[0].ability.name, data.abilities[1].ability.name])
+				setImage(dittoImgUrl)
+				
+				}}> VISA </button>
 		
 			<section>
 				<p> {name}</p>

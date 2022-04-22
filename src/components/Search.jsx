@@ -6,18 +6,17 @@ const Search = () => {
 	const [inputValue, setInputvalue] = useState('')
 	const list = [{id: 1, name: 'bulbasaur'}, {id: 2, name: 'ditto'}, {id: 3, name: 'charmander'}, {id: 4, name: 'charmeleon'}] // testlista
 
-	const filteredList = list.filter(x => x.name.includes(inputValue)) // så ska den/de pokemon visas
+	const filteredList = list.filter(x => x.name.includes(inputValue))
 	
 	return (
 		<div className='whole-searchjsx-div'>
 			<section className='search-section'>
-				<p> Skriv in namnet på den Pokemon du söker efter! </p>
+				<p> Börja skriv in namnet på den Pokemon du söker efter! </p>
 					<input 
 					placeholder="Namn"
 					value={inputValue}
 					onChange={(e) => setInputvalue(e.target.value)} />
-					{/* <button onClick={handleSubmit} /> */}
-					<p> Alla som börjar på: {inputValue} </p>
+					<p> Alla som innehåller: {inputValue} </p>
 				<ul> {filteredList.map(x => (
 					<li key={x.id}> {x.name} </li>
 				))}
@@ -25,7 +24,7 @@ const Search = () => {
 			</section>
 		
 			<section className='show-specific-pokemon-section'>
-				<ShowPoke chosenPokemon={inputValue} />
+				<ShowPoke />
 			</section>
 
 			<section className='nickname-section'>

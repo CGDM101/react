@@ -1,13 +1,9 @@
 import './App.css'
-
 import { BrowserRouter as Router, Routes, Route, Link, NavLink, Navigate } from 'react-router-dom'
 import Team from './components/Team'
 import Search from './components/Search'
 import Start from './components/Start'
-
-// import {data} from '../data' // ?
-
-const all1126 =  'https://pokeapi.co/api/v2/pokemon?limit=1200&offset=0'
+// import {data} from '../data'
 
 function App() {
 

@@ -1,7 +1,5 @@
 import { useState } from 'react'
 
-// When the data is handled by the components, all the data is stored in the component state.
-
 let testList = [{id: 1, name: 'bulbasaur', nickname: ''}, {id: 2, name: 'venosaur', nickname: ''}]
 
 function GiveNickname() {

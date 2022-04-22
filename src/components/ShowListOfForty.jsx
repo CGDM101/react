@@ -2,8 +2,6 @@ import { useState } from 'react'
 
 const all = 'https://pokeapi.co/api/v2/pokemon?limit=40'
 
-// Denna ska äga state, vara föräldern, och proppa ner till pokemonlist, team etc?
-
 function ShowListOfForty() {
 
 	let first = ''
@@ -93,7 +91,7 @@ function ShowListOfForty() {
 	const [thirtyninthItem, setThirtyninth] = useState(thirtyninth)
 	const [fourtiethItem, setFourtieth] = useState(fourtieth)
 
-	const [img, setImg] = useState(null) // dessa blir undefined
+	const [img, setImg] = useState(null)
 	const [img2, setImg2] = useState(null)
 	const [img3, setImg3] = useState(null)
 	const [img4, setImg4] = useState(null)
@@ -184,43 +182,12 @@ function ShowListOfForty() {
 
 	// ===============
 
-
-	// WIP
-	let poke1 = {id: 1, namn: firstItem, bild: img, smeknamn: 'hey'}
-	let poke2 = {id: 2, namn: secondItem, bild: img2, smeknamn: ''}
-	let poke3 = {id: 3, namn: thirdItem, bild: img3, smeknamn: ''}
-	let poke4 = {id: 4, namn: fourthItem, bild: img4, smeknamn: ''}
-	let poke5 = {id: 5, namn: fifthItem, bild: img5, smeknamn: ''}
-	let poke6 = {id: 6, namn: sixthItem, bild: img6, smeknamn: ''}
-	let poke7 = {id: 7, namn: seventhItem, bild: img7, smeknamn: ''}
-	let poke8 = {id: 8, namn: eigthItem, bild: img8, smeknamn: ''}
-	let poke9 = {id: 9, namn: ninthItem, bild: img9, smeknamn: ''}
-	let poke10 = {id: 10, namn: tenthItem, bild: img10, smeknamn: ''}
-
-	let list10firstPokes = [
-		poke1, poke2, poke3, poke4, poke5, poke6, poke7, poke8, poke9, poke10
-	]
-	console.log('tians namn:', poke10.namn) // funkar, men konstigt
-	console.log('tian igen',list10firstPokes[9].namn) // blir samma
-	// bild funar inte alls, undefined (pga null i usestate?)
-	console.log('tians bild:',id10img) // detta funkar dock (eller sätta id10img direkt på bild i poke10-objektet...)
-
-	let pokemonList = [
-		{firstItem, img},
-		{secondItem, img2}
-	]
-	//
-
-
 	return (
 		<section>
 			<button className='button-to-show-40'  onClick={async function func() {
 				const response = await fetch(all, {method: 'GET'})
 				const data = await response.json()
 				
-console.log('all data',data.results) //
-console.log('35:',list10firstPokes[34]) // Mna måste trycka två ggr????
-
 				// SET IMG
 				first = setImg(id1img)
 				second = setImg2(id2img)
@@ -311,12 +278,6 @@ console.log('35:',list10firstPokes[34]) // Mna måste trycka två ggr????
 				thirtyninth = setThirtyninth(data.results[38].name)
 				fourtieth = setFourtieth(data.results[39].name)
 	
-// myData.map(o => (
-// 	id = data.id,
-// 	namn = data.name
-// ))
-// console.log('myData:', myData.namn)
-
 			}}> SE ALLA POKEMON </button> {/*async slutar här*/}
 
 			<section className='pokemon-section'>

@@ -1,10 +1,6 @@
 import { useState } from 'react'
 
 function Team() {
-	
-	const showForty = 'https://pokeapi.co/api/v2/pokemon?limit=40'
-
-	// detta ska komma fr api:et
 	let pokeList = [
 		{id: 1, name: 'Bulbasaur'},
 		{id: 2, name: 'Ivysaur'},
@@ -52,34 +48,21 @@ function Team() {
 	]
 	
 	const [team, setTeam] = useState([])
-	// const [poke1, setPoke1] = useState('')
-	// const [poke2, setPoke2] = useState('')
-	// const [poke3, setPoke3] = useState('')
 
 	const handleChange = (event) => {
-		// Körs när man väljer något ur <select>
-		// setPoke1(event.target.value)
-		// setPoke2(event.target.value)
-		// setPoke3(event.target.value)
-		console.log('handleChange 1')
 		if (team.length < 9) {
 			let pokeObject = pokeList.find(p => p.name === event.target.value)
 			setTeam([...team, pokeObject]) // obs team består av objekt! inte strängar!
-			console.log('handleChange 2')
-			console.log('klickade',event.target.value, team)
 		} else {
-			console.log('handleChange 3')
 			alert('Du har valt maxantal!')
 			setTeam([...team])
 		}
-		console.log('handleChange 4')
 		// todo: om en pokemon redan är vald, alert!
 	}
 
 	const handleRemove = (id) => {
 		let newArray = team.filter(x => x.id !== id)
 		setTeam(newArray)
-		console.log('handleRemove: team=', team, 'newArray=', newArray, 'id=', id)
 	}
 
 	return (
