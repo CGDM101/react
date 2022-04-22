@@ -1,0 +1,43 @@
+const id1img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png' //bulbasaur
+const id2img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png' // ivysaur
+const id3img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png' // venusaur
+const id4img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png' // charmander
+const id5img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png' // charmeleon
+const id6img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png' // charizard
+const id7img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png' // squirtle
+const id8img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png' // wartortle
+const id9img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png' // blastoise
+const id10img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png' // caterpie
+
+const id11img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png' // metapod
+const id12img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png' // butterfree
+const id13img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png' // weedle
+const id14img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png' // kakuna
+const id15img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png' // beedrill
+const id16img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png' //pidgey
+const id17img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png' // pidgeotto
+const id18img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png' // pidgeot
+const id19img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png' // rattata
+const id20img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png' // raticate
+
+const id21img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png' // spearow
+const id22img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png' // fearow
+const id23img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png' // ekans
+const id24img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png' // arbok
+const id25img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png' // pikachu
+const id26img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png' // raichu
+const id27img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png' // sandshrew
+const id28img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png' // sandslash
+const id29img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png' // nidoran-f
+const id30img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png' // nidorina
+
+const id31img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png' // nidoqueen
+const id32img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png' // nidoran-m
+const id33img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png' // nidorino
+const id34img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png' // nidoking
+const id35img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png' // clefairy
+const id36img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png' // clefable
+const id37img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png' // vulpix
+const id38img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png' // ninetales
+const id39img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png' // jigglypuff
+const id40img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png' // wigglypuff
