@@ -9,11 +9,6 @@
   color: maroon;
 }
 
-/*header och main*/
-.main {
-  padding: 2em;
-}
-
 .App > h1 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -37,99 +32,41 @@ a:active {
   text-decoration-line: none;
   color: maroon;
 }
-/*slut header och main*/
-
-/*show40.jsx*/
-.pokemon-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-.button-to-show-40 { /*måste ha denna kvar*/
-  padding: 0.5em;
-}
-
-.pokemon-section > p {
-  background-color:lavenderblush;
-  display: flex;
-  flex-direction: column;
-}
-/*slut show40.jsx*/
 
 button {
   font-size: calc(10px + 2vmin);
   background-color:maroon;
   border: 1px solid maroon;
   border-radius: 0.5em;
-  padding: 1em;
+  padding: 0.5em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
-  font-weight: bold;
+  font-weight: medium;
+  margin: 1em;
 }
 
-/*team.jsx*/
-.team-section {
-  background-color: lavenderblush;
-  padding: 2em;
-}
-
-.select-area {
+input {
   font-size: 1em;
   border-radius: 0.5em;
-  border: 2px solid thistle;
+  border: 2px solid maroon;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   color: maroon;
 }
 
-/* obs dropdown-area > button funkar inte!! */
-.team-section button { 
-  font-weight: bold;
-  padding: 0.5em;
-  margin: 0.5em; /*mellanrum mellan raderna i listan*/
-}
-
-.dropdown-area li {
-padding: 0.5em;
-}
-/*slut team.jsx*/
-
-
-/*search.jsx*/
-.search-section {
-  padding: 2em;
-}
-.search-section input {
-  font-size: 1em;
-  border-radius: 0.5em;
-  border: 2px solid thistle;
-}
-
-.nickname-section {
-  padding: 2em;
-}
-.nickname-section button {
-  padding: 0.5em;
-}
-.nickname-section input {
-  font-size: 1em;
-  border-radius: 0.5em;
-  border: 2px solid thistle;
-}
-
-.show-specific-pokemon-section {
-  padding: 2em;
-}
-
-.show-specific-pokemon-section button {
-  padding: 0.5em;
-}
-
-.whole-searchjsx-div {
-  display: flex;
-  flex-direction: column;
-}
-.whole-searchjsx-div section {
+.single-pokemon {
   background-color: lavenderblush;
-  margin: 1em;
+  font-size: large;
+  margin: 5px;
 }
-/*slut search.jsx*/
+
+.team {
+  background-color: thistle;
+  margin: 50px;
+  padding: 50px;
+  width: 20%;
+}

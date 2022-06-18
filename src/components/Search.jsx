@@ -1,38 +1,73 @@
-import { useState } from 'react'
-import GiveNickname from './GiveNickname'
-import ShowPoke from "./ShowPoke"
+import { useState, useEffect } from "react"
+import SinglePokemon from "./SinglePokemon"
 
-const Search = () => {
-	const [inputValue, setInputvalue] = useState('')
-	const list = [{id: 1, name: 'bulbasaur'}, {id: 2, name: 'ditto'}, {id: 3, name: 'charmander'}, {id: 4, name: 'charmeleon'}] // testlista
+const Search = ({ setTeam }) => {
 
-	const filteredList = list.filter(x => x.name.includes(inputValue))
-	
-	return (
-		<div className='whole-searchjsx-div'>
-			<section className='search-section'>
-				<p> Börja skriv in namnet på den Pokemon du söker efter! </p>
-					<input 
-					placeholder="Namn"
-					value={inputValue}
-					onChange={(e) => setInputvalue(e.target.value)} />
-					<p> Alla som innehåller: {inputValue} </p>
-				<ul> {filteredList.map(x => (
-					<li key={x.id}> {x.name} </li>
-				))}
-				</ul>
-			</section>
-		
-			<section className='show-specific-pokemon-section'>
-				<ShowPoke />
-			</section>
+  const [searchedPokemons, setSearchedpokemons] = useState([])
+  const [allPokemons, setAllpokemons] = useState([])
+  const [search, setSearch] = useState("")
+  const [searching, setSearching] = useState(false)
+  const [NextSet, setNextSet] = useState('https://pokeapi.co/api/v2/pokemon?limit=40')
 
-			<section className='nickname-section'>
-				<GiveNickname />
-			</section>
+  const FetchFromApi = async () => {
+    setSearching(true) //
+    const response = await fetch(NextSet) // url
+    const data = await response.json()
+    setNextSet(data.next) //
+    await  PopulatePokemonsWithData(data.results)
+    setSearching(false) //
+  }
 
-		</div>
-	)
-}	
+  async function PopulatePokemonsWithData(results) {
+    for (let item of results) {
+      await fetch(item.url).then(async (response) => {
+        const data = await response.json();
+        setSearchedpokemons((foo) => [...foo, data])
+        setAllpokemons((bar) => [...bar, data])
+      })
+    }
+  }
+
+  useEffect(() => {
+    if (!searching) {
+      FetchFromApi()
+    }
+  }, [])
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    setSearch(event.target.value);
+  }
+
+  useEffect(() => {
+    if (search.length) {
+      const results = allPokemons.filter((p) =>
+        p.name.toLowerCase().includes(search.toLowerCase())
+      )
+      setSearchedpokemons(results)
+    } else {
+      setSearchedpokemons(allPokemons)
+    }
+  }, [search])
+
+  return (
+    <section>
+      <div className='body'>
+        <input type='text' value={search} onChange={(e) => handleChange(e)} placeholder='Sök efter en pokemon!' />
+        <div className='pokemon-grid'>
+          {!searching ? (
+            searchedPokemons.map((pokemon, index) => (
+              <SinglePokemon addPokemon={true} key={index} id={pokemon.id} name={pokemon.name} image={pokemon.sprites.front_default} nickname='' setTeam={setTeam}
+              />
+            ))
+          ) : (
+            <p>Laddar...</p>
+          )}
+        </div>
+        <button onClick={FetchFromApi}> V </button>
+      </div>
+    </section>
+  )
+}
 
 export default Search
